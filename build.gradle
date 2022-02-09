@@ -3,7 +3,7 @@ apply plugin: 'maven'
 
 group = 'com.github.gradle.simple'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 1.8 // java 8
 targetCompatibility = 1.8
 
 repositories {
