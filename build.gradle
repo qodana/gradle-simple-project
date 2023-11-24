@@ -1,4 +1,7 @@
-apply plugin: 'java'
+plugins {
+    id 'java'
+    id 'jacoco'
+}
 
 group = 'com.github.gradle.simple'
 
@@ -31,4 +34,29 @@ artifacts {
 wrapper {
     gradleVersion = "7.2"
     distributionType = Wrapper.DistributionType.ALL
+}
+
+dependencies {
+    testImplementation(platform('org.junit:junit-bom:5.10.1'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.enabled true
+        csv.enabled true
+    }
+}
+
+
+test {
+    finalizedBy jacocoTestReport
 }
