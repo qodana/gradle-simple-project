@@ -1,17 +1,9 @@
-package hello;
-
-import java.util.stream.Stream;
+package holly;
 
 
-public class Hello {
+import java.util.List;
 
-    public static void main(String[] args) {
-        if (true) {
-
-        }
-
-
-    }
+public class HollyM {
 
     public static int sum(int a, int b) {
         return a + b;
@@ -31,4 +23,5 @@ public class Hello {
     public static int minusxx(int a, int b) {
         return a - b;
     }
+
 }

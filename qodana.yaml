@@ -1,9 +1,10 @@
 version: 1.0
 profile:
-  name: qodana.recommended
+  name: qodana.starter
 include:
   - name: VulnerableLibrariesGlobal
   - name: VulnerableLibrariesLocal
   - name: PhpVulnerablePathsInspection
   - name: CheckDependencyLicenses
   - name: RiderSecurityErrorsInspection
+  - name: DuplicatedCode
