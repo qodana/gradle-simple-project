@@ -1,5 +1,7 @@
 package holly;
 
+import static holly.EnhancedForDouble.*;
+
 public class EnhancedFor {
     public static void bar() {
         int[] list = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -31,6 +33,23 @@ public class EnhancedFor {
         printList(list);
         System.out.println("Calling addOneError");
         addOneError(list);
+        System.out.println("List after call to addOneError. Note elements of list did not change.");
+        printList(list);
+    }
+
+    public static void baddr() {
+        int[] list = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int sum = sumListEnhancedd(list);
+        System.out.println("Sum of elements in list: " + sum);
+
+        System.out.println("Original List");
+        printList(list);
+        System.out.println("Calling addOne");
+        addOned(list);
+        System.out.println("List after call to addOne");
+        printList(list);
+        System.out.println("Calling addOneError");
+        addOneErrord(list);
         System.out.println("List after call to addOneError. Note elements of list did not change.");
         printList(list);
     }
