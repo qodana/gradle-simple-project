@@ -8,3 +8,5 @@ include:
   - name: CheckDependencyLicenses
   - name: RiderSecurityErrorsInspection
   - name: DuplicatedCode
+  - name: VulnerableCodeUsages
+  - name: NpmVulnerableApiCode

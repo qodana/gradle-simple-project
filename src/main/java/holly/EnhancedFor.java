@@ -1,5 +1,9 @@
 package holly;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+
 import static holly.EnhancedForDouble.*;
 
 public class EnhancedFor {
@@ -41,7 +45,6 @@ public class EnhancedFor {
         int[] list = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int sum = sumListEnhancedd(list);
         System.out.println("Sum of elements in list: " + sum);
-
         System.out.println("Original List");
         printList(list);
         System.out.println("Calling addOne");
@@ -52,6 +55,11 @@ public class EnhancedFor {
         addOneErrord(list);
         System.out.println("List after call to addOneError. Note elements of list did not change.");
         printList(list);
+                try {
+                    new ObjectMapper().readValue("{}", String.class);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
     }
 
     // pre: list != null
