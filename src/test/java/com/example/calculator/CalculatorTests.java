@@ -28,4 +28,17 @@ class CalculatorTests {
         assertEquals(expectedResult, calculator.add(first, second),
                 () -> first + " + " + second + " should equal " + expectedResult);
     }
+
+    @ParameterizedTest(name = "{0} - {1} = {2}")
+    @CsvSource({
+            "1,    0,   1",
+            "5,    2,   3",
+            "151,  51, 100",
+            "201,  100, 101"
+    })
+    void minus(int first, int second, int expectedResult) {
+        Calculator calculator = new Calculator();
+        assertEquals(expectedResult, calculator.minus(first, second),
+                () -> first + " - " + second + " should equal " + expectedResult);
+    }
 }

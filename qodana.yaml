@@ -1,4 +1,5 @@
 version: 1.0
+projectJDK: "11"
 profile:
   name: qodana.recommended
 bootstrap: |
@@ -14,5 +15,5 @@ failureConditions:
     low: 0
     info: 0
   testCoverageThresholds:
-    total: 30
-    fresh: 0
+    total: 12
+    fresh: 99

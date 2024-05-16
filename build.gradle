@@ -5,24 +5,26 @@ plugins {
 
 group = 'com.github.gradle.simple'
 
-sourceCompatibility = 1.8 // java 8
-targetCompatibility = 1.8
+sourceCompatibility = 11 // java 8
+targetCompatibility = 11
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation 'com.google.guava:guava:29.0-jre'
+    implementation 'com.google.guava:guava:32.0.0-android'
 }
 
-task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
+tasks.register('sourcesJar', Jar) {
+    dependsOn classes
+//    getArchiveClassifier = 'sources'
     from sourceSets.main.allSource
 }
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
+tasks.register('javadocJar', Jar) {
+    dependsOn javadoc
+//    getArchiveClassifier = 'javadoc'
     from javadoc.destinationDir
 }
 
@@ -32,7 +34,7 @@ artifacts {
 }
 
 wrapper {
-    gradleVersion = "7.2"
+    gradleVersion = "8.0"
     distributionType = Wrapper.DistributionType.ALL
 }
 
@@ -51,8 +53,9 @@ test {
 jacocoTestReport {
     dependsOn test
     reports {
-        xml.enabled true
-        csv.enabled true
+        xml.required.set(true)
+        csv.required.set(true)
+        html.required.set(true)
     }
 }
 
