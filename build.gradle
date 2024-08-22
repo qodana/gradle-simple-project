@@ -29,6 +29,6 @@ artifacts {
 }
 
 wrapper {
-    gradleVersion = "7.2"
+    gradleVersion = "8.5"
     distributionType = Wrapper.DistributionType.ALL
 }
