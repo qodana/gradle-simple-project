@@ -1,8 +1,6 @@
 package hello
 
 import java.sql.DriverManager.println
-import java.util.stream.Stream;
-import java.util.stream.Stream;
 
 open class Vehicle {
     open fun startEngine() {
@@ -14,6 +12,9 @@ open class Vehicle {
 class Car : Vehicle() {
     override fun startEngine() {
         println("Car engine started")
+        if (false) {
+            kotlin.io.println("BBBBB")
+        }
     }
 }
 
