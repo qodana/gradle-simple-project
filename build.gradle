@@ -1,20 +1,15 @@
 plugins {
     id 'java'
     id 'jacoco'
+    id 'org.jetbrains.kotlin.jvm' version '2.0.20'
 }
 
 group = 'com.github.gradle.simple'
-
-sourceCompatibility = 11 // java 8
-targetCompatibility = 11
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation 'com.google.guava:guava:32.0.0-android'
-}
 
 tasks.register('sourcesJar', Jar) {
     dependsOn classes
@@ -34,13 +29,15 @@ artifacts {
 }
 
 wrapper {
-    gradleVersion = "8.0"
+    gradleVersion = "8.5"
     distributionType = Wrapper.DistributionType.ALL
 }
 
 dependencies {
     testImplementation(platform('org.junit:junit-bom:5.10.1'))
     testImplementation('org.junit.jupiter:junit-jupiter')
+    implementation 'com.google.guava:guava:32.0.0-android'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
 test {
@@ -62,4 +59,8 @@ jacocoTestReport {
 
 test {
     finalizedBy jacocoTestReport
+}
+
+kotlin {
+    jvmToolchain(17)
 }
