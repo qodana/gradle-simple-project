@@ -29,7 +29,7 @@ artifacts {
 }
 
 wrapper {
-    gradleVersion = "8.5"
+    gradleVersion = "8.8"
     distributionType = Wrapper.DistributionType.ALL
 }
 
@@ -37,6 +37,7 @@ dependencies {
     testImplementation(platform('org.junit:junit-bom:5.10.1'))
     testImplementation('org.junit.jupiter:junit-jupiter')
     implementation 'com.google.guava:guava:32.0.0-android'
+    implementation 'org.clojure:clojure:1.11.3'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
