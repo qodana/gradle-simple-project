@@ -21,7 +21,5 @@ public class Hello {
         if (false) {
             System.out.println("x");
         }
-        aslkdja
-                asdl
     }
 }

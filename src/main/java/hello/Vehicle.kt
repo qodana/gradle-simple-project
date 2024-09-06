@@ -5,7 +5,6 @@ import java.sql.DriverManager.println
 open class Vehicle {
     open fun startEngine() {
         println("Vehicle engine started")
-        Throwable.printStackTrace()
     }
 }
 
@@ -26,5 +25,4 @@ fun getUsername(): String? {
 fun getUserInput(): String? {
     return null
 }
-sdf
 

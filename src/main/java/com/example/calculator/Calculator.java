@@ -22,4 +22,8 @@ public class Calculator {
         return a / b;
     }
 
+    public int devideee(String a, int b) {
+        return a.indexOf('d') + b;
+    }
+
 }

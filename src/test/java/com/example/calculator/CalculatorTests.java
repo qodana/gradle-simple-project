@@ -41,4 +41,43 @@ class CalculatorTests {
         assertEquals(expectedResult, calculator.minus(first, second),
                 () -> first + " - " + second + " should equal " + expectedResult);
     }
+
+    @ParameterizedTest(name = "{0} / {1} = {2}")
+    @CsvSource({
+            "1,    1,   1",
+            "4,    2,   2",
+            "8,  2, 4",
+            "200,  100, 2"
+    })
+    void devide(int first, int second, int expectedResult) {
+        Calculator calculator = new Calculator();
+        assertEquals(expectedResult, calculator.devide(first, second),
+                () -> first + " / " + second + " should equal " + expectedResult);
+    }
+
+//    @ParameterizedTest(name = "{0} / {1} = {2}")
+//    @CsvSource({
+//            "d,    1,   1",
+//            "ads,    2,   3",
+//            "qwd,  2, 4",
+//            "safd,  100, 103"
+//    })
+//    void devideee(String first, int second, int expectedResult) {
+//        Calculator calculator = new Calculator();
+//        assertEquals(expectedResult, calculator.devideee(first, second),
+//                () -> first + " / " + second + " should equal " + expectedResult);
+//    }
+
+//    @ParameterizedTest(name = "{0} / {1} = {2}")
+//    @CsvSource({
+//            "d,    1,   1",
+//            "ads,    2,   3",
+//            "qwd,  2, 4",
+//            "safd,  100, 103"
+//    })
+//    void devideeese(String first, int second, int expectedResult) {
+//        Calculator calculator = new Calculator();
+//        assertEquals(expectedResult, calculator.devideese(first, second),
+//                () -> first + " / " + second + " should equal " + expectedResult);
+//    }
 }
