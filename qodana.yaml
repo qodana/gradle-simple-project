@@ -1,0 +1,3 @@
+failureConditions:
+  severityThresholds:
+    high: 0
